@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function() {
         light.diffuse = new BABYLON.Color3(.5,.5,.5)
 
         var material = new BABYLON.StandardMaterial("material", scene)
-        material.diffuseTexture = new BABYLON.Texture('texture.jpg', scene)
+        material.diffuseTexture = new BABYLON.Texture('https://chillbuilds.com/babylon-js/assets/images/texture.jpg', scene)
         box.material = material
 
         return scene
@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", function() {
     var scene = createScene()
     engine.runRenderLoop(function(){
         // var material = scene.getMeshByName('Box').material
-
         scene.render()
     })
 })
