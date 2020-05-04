@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function() {
         light.diffuse = new BABYLON.Color3(.5,.5,.5)
 
         var material = new BABYLON.StandardMaterial("material", scene)
-        material.diffuseTexture = new BABYLON.Texture('../images/texture.jpg', scene)
+        material.diffuseTexture = new BABYLON.Texture('./assets/images/texture.jpg', scene)
         box.material = material
 
         return scene
