@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         var light = new BABYLON.PointLight('pointLight', new BABYLON.Vector3(0,15,0),scene)
         light.parent = camera
-        light.diffuse = new BABYLON.Color3(.0,.0,.0)
+        light.diffuse = new BABYLON.Color3(1,1,1)
 
         var material = new BABYLON.StandardMaterial("material", scene)
         material.diffuseTexture = new BABYLON.Texture('https://chillbuilds.com/babylon-js/assets/images/marble.jpg', scene)
