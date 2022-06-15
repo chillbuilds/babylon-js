@@ -4,6 +4,11 @@ window.addEventListener("DOMContentLoaded", function() {
 
     function createScene() {
         var scene = new BABYLON.Scene(engine)
+
+        scene.createDefaultEnvironment({
+            environtmentTexture: '../images/environmentSpecular.env'
+        })
+
         scene.clearColor = new BABYLON.Color3.Blue()
         var box = BABYLON.Mesh.CreateBox("Box", 4.0, scene)
         var camera = new BABYLON.ArcRotateCamera("arcCamera1",
@@ -14,19 +19,17 @@ window.addEventListener("DOMContentLoaded", function() {
         camera.setTarget(BABYLON.Vector3.Zero())
         camera.attachControl(canvas, true)
 
-        var light = new BABYLON.PointLight('pointLight', new BABYLON.Vector3(0,15,0),scene)
-        light.parent = camera
-        light.diffuse = new BABYLON.Color3(1,1,1)
-
-        var material = new BABYLON.StandardMaterial("material", scene)
-        material.diffuseTexture = new BABYLON.Texture('https://chillbuilds.com/babylon-js/assets/images/marble.jpg', scene)
-        box.material = material
+        // var material = new BABYLON.StandardMaterial("material", scene)
+        var pbr = new BABYLON.PBRSpecularGlossinessMaterial('pbr', scene)
+        // material.ambientColor = new BABYLON.Color3(1,1,1)
+        // material.diffuseTexture = new BABYLON.Texture('https://chillbuilds.com/babylon-js/assets/images/marble.jpg', scene)
+        // box.material = material
+        box.material = pbr
 
         return scene
     }
     var scene = createScene()
     engine.runRenderLoop(function(){
-        // var material = scene.getMeshByName('Box').material
         scene.render()
     })
 })
