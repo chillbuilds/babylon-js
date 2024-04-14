@@ -26,12 +26,11 @@ window.addEventListener("DOMContentLoaded", function() {
         
         camera.attachControl(canvas, true)
         
-        let grayValue = 0.3
+        let grayValue = 0.2
 
         var bodyPBR = new BABYLON.PBRMetallicRoughnessMaterial("bodyPBR", scene)
         bodyPBR.baseColor = new BABYLON.Color3(grayValue, grayValue, grayValue)
-        bodyPBR.metallic = 0.1;
-        bodyPBR.roughness = 0.7;
+        bodyPBR.roughness = 0.7
 
         BABYLON.SceneLoader.ImportMeshAsync('body', '../assets/models/', 'body.obj').then((result)=>{
             let body = result.meshes[0]
@@ -51,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function() {
         tablePBR.albedoTexture = new BABYLON.Texture('../assets/textures/wood/color.jpg', scene)
         tablePBR.albedoTexture.uScale = .2
         tablePBR.albedoTexture.vScale = .2
-        // tablePBR.albedoTexture.vAng = Math.PI / 2
+        tablePBR.albedoTexture.level = 1.5
         tablePBR.microSurfaceTexture = new BABYLON.Texture('../assets/textures/wood/roughness.jpg', scene)
         tablePBR.microSurfaceTexture.uScale = .2
         tablePBR.microSurfaceTexture.vScale = .2
