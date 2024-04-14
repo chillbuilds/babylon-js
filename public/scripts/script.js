@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function() {
         tablePBR.microSurfaceTexture = new BABYLON.Texture('../assets/textures/wood/roughness.jpg', scene)
         tablePBR.microSurfaceTexture.uScale = .2
         tablePBR.microSurfaceTexture.vScale = .2
-        tablePBR.bumpTexture = new BABYLON.Texture('https://flamingoflapjack.com/assets/images/normal.png', scene)
+        tablePBR.bumpTexture = new BABYLON.Texture('../assets/textures/wood/normal.png', scene)
         tablePBR.bumpTexture.uScale = .2
         tablePBR.bumpTexture.vScale = .2
         tablePBR.roughness = 0.9
